@@ -1,158 +1,73 @@
-$(document.body).ready(function() {
-	
-	// toggle navigation
-	$('.nav-toggle').click(function() {
-		$('.inner').toggleClass('open');
-	});
+$(document).ready(function(){
+    $(window).scroll(function(){
+        // sticky navbar on scroll script
+        if(this.scrollY > 20){
+            $('.navbar').addClass("sticky");
+        }else{
+            $('.navbar').removeClass("sticky");
+        }
+        
+        // scroll-up button show/hide script
+        if(this.scrollY > 500){
+            $('.scroll-up-btn').addClass("show");
+        }else{
+            $('.scroll-up-btn').removeClass("show");
+        }
+    });
 
-	// smooth scrolling
-	$(function() {
-		$('a[href*="#"]:not([href="#"])').click(function() {
-			if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-				var target = $(this.hash);
-				target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-				if (target.length) {
-					setTimeout(function() {
-						$('html, body').animate({
-						  scrollTop: target.offset().top
-					  }, 1000);
-					}, 600);
-					return false;
-				}
-			}
-		});
-	});
+    // slide-up script
+    $('.scroll-up-btn').click(function(){
+        $('html').animate({scrollTop: 0});
+        // removing smooth scroll on slide-up button click
+        $('html').css("scrollBehavior", "auto");
+    });
 
-	var hi = $('.titanic'),
-		header = $('header'),
-		underline = $('.underline'),
-		portfolioBox = $('.portfolio-sec'),
-		project = $('.project'),
-		navLink = $('.nav-link'),
-		skillsBox = $('.skills-sec'),
-		skills = $('.skill'),
-		arrow = $('#arrow'),
-		w = $(window),
-		fz;
+    $('.navbar .menu li a').click(function(){
+        // applying again smooth scroll on menu items click
+        $('html').css("scrollBehavior", "smooth");
+    });
 
-	portfolioBox.css({
-		'marginBottom': $('footer').height()
-	})
+    // toggle menu/navbar script
+    $('.menu-btn').click(function(){
+        $('.navbar .menu').toggleClass("active");
+        $('.menu-btn i').toggleClass("active");
+    });
 
-	TweenMax.from(hi, 5, {
-		y: 140,
-		opacity: 0,
-		ease: Elastic.easeOut
-	})
-	
-	$('.nav-link').click(function() {
-		$('.inner').toggleClass('open');
-	});
+    // typing text animation script
+    var typed = new Typed(".typing", {
+        strings: ["YouTuber", "Developer", "Blogger", "Designer", "Freelancer"],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    });
 
-	$('nav li')
-		.mouseenter(function(e) {
-			var underline = $(this).find('div.underline'),
-					width = $(this).find('span').width();
-			TweenMax.to(underline, .1, {
-				width: width
-			});
-		})
-		.mouseleave(function(e) {
-			var underline = $(this).find('div.underline');
-			TweenMax.to(underline, .1, {
-				width: 0
-			});
-		})
+    var typed = new Typed(".typing-2", {
+        strings: ["YouTuber", "Developer", "Blogger", "Designer", "Freelancer"],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    });
 
-	w.scroll(function(e) {
-		var wScroll = $(this).scrollTop(),
-			wHeight = $(this).height();
-		if (wScroll >= (header.height() - hi.height()) / 2) {
-			
-			// hi.css({
-			// 	'position': 'absolute',
-			// 	'top': '100%',
-			// 	'transform': 'translate(-50%, -100%)'
-			// })
-			// TweenMax.to(hi, .5, {
-			// 	color: '#333'
-			// })
-			
-			// TweenMax.to(header, .5, {
-			// 	backgroundColor: '#fff'
-			// })
-
-		}
-		if (wScroll < (header.height() - hi.height()) / 2) {
-			// hi.css({
-			// 	'position': 'fixed',
-			// 	'top': '50%',
-			// 	'transform': 'translate(-50%, -50%)'
-			// })
-			// TweenMax.to(hi, .5, {
-			// 	color: '#fff'
-			// })
-			
-		
-			// TweenMax.to(header, .5, {
-			// 	backgroundColor: '#333'
-			// })
-		}
-	})
-
-	w.resize(function() {
-		portfolioBox.css({
-			'marginBottom': $('footer').height()
-		})
-	})
-
-	$('#portfolio').waypoint(function() {
-		// $('footer').css({
-		// 	'display': 'block'
-		// })
-		TweenMax.staggerTo(project, .25, {
-			'opacity': 1,
-			x: 0
-		}, .25)
-	}, {
-		offset: 300
-	})
-
-	
-	
-	portfolioBox.waypoint(function() {
-		
-		
-	})
-
-	skillsBox.waypoint(function() {
-		skills.filter('.toR').css({
-			'opacity': 1,
-			'transform': 'translateX(0)'
-		});
-		skills.filter('.toL').css({
-			'opacity': 1,
-			'transform': 'translateX(0)'
-		});
-		skills.eq(1).css({
-			'opacity': 1,
-			'transform': 'translateY(0)'
-		});
-		skills.eq(4).css({
-			'opacity': 1
-		});
-		skills.eq(7).css({
-			'opacity': 1,
-			'transform': 'translateY(0)'
-		});
-		
-
-	})
-	
-	arrow.click(function() {
-		$('body').animate({
-			scrollTop: 0
-		}, 1000);
-	});
-
+    // owl carousel script
+    $('.carousel').owlCarousel({
+        margin: 20,
+        loop: true,
+        autoplay: true,
+        autoplayTimeOut: 2000,
+        autoplayHoverPause: true,
+        responsive: {
+            0:{
+                items: 1,
+                nav: false
+            },
+            600:{
+                items: 2,
+                nav: false
+            },
+            1000:{
+                items: 3,
+                nav: false
+            }
+        }
+    });
 });
