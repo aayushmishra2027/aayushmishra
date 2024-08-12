@@ -142,7 +142,7 @@ section .title::after{
     bottom: 10px;
     text-align: center;
     line-height: 45px;
-    color: #fff;
+    color: #ffff00;
     z-index: 9999;
     font-size: 30px;
     border-radius: 6px;
@@ -167,7 +167,7 @@ section .title::after{
     display: flex;
     background: url("images/banner.jpg") no-repeat center;
     height: 100vh;
-    color: #fff;
+    color: #FF0000;
     min-height: 500px;
     background-size: cover;
     background-attachment: fixed;
@@ -199,7 +199,7 @@ section .title::after{
 .home .home-content a{
     display: inline-block;
     background: crimson;
-    color: #fff;
+    color: #FF0000;
     font-size: 25px;
     padding: 12px 36px;
     margin-top: 20px;
@@ -215,7 +215,7 @@ section .title::after{
 
 /* about section styling */
 .about .title::after{
-    content: "who i am";
+    content: "Introduction";
 }
 .about .about-content .left{
     width: 45%;
@@ -269,7 +269,7 @@ section .title::after{
 .experience .title::after,
 .teams .title::after{
     background: #111;
-    content: "what i provide";
+    content: "Projects Completed/TBD";
 }
 .experience .serv-content .card{
     width: calc(33% - 20px);
@@ -306,7 +306,7 @@ section .title::after{
 /* skills section styling */
 
 .skills .title::after{
-    content: "what i know";
+    content: "Technical Skill Knowledge";
 }
 .skills .skills-content .column{
     width: calc(50% - 30px);
@@ -380,7 +380,7 @@ section .title::after{
 
 /* teams section styling */
 .projects .title::after{
-    content: "who with me";
+    content: "Contributors";
 }
 .projects .carousel .card{
     background: #222;
@@ -443,7 +443,7 @@ section .title::after{
 
 /* contact section styling */
 .contact .title::after{
-    content: "get in touch";
+    content: "Get In Touch";
 }
 .contact .contact-content .column{
     width: calc(50% - 30px);
