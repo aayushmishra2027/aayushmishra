@@ -165,7 +165,7 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background: url("<iframe src="https://giphy.com/embed/3o7buijTqhjxjbEqjK" width="480" height="480" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/bbc-80s-3o7buijTqhjxjbEqjK">via GIPHY</a></p>") no-repeat center;
+    background: url("images/banner.jpg") no-repeat center;
     height: 100vh;
     color: #FF0000;
     min-height: 500px;
