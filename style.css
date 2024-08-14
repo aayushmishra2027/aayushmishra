@@ -258,51 +258,68 @@ section .title::after{
 }
 
 /* services section styling */
-.experience, .teams{
-    color:#fff;
-    background: #111;
+/* teams section styling */
+.projects .title::after{
+    content: "Experience";
 }
-.experience .title::before,
-.teams .title::before{
-    background: #fff;
-}
-.experience .title::after,
-.teams .title::after{
-    background: #111;
-    content: "Projects Completed/TBD";
-}
-.experience .serv-content .card{
-    width: calc(33% - 20px);
+.projects .carousel .card{
     background: #222;
-    text-align: center;
     border-radius: 6px;
-    padding: 50px 25px;
-    cursor: pointer;
+    padding: 25px 35px;
+    text-align: center;
+    overflow: hidden;
     transition: all 0.3s ease;
 }
-.experience .serv-content .card:hover{
+.projects .carousel .card:hover{
     background: crimson;
 }
-.experience .serv-content .card .box{
+.projects .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s ease;
 }
-.experience .serv-content .card:hover .box{
+.projects .carousel .card:hover .box{
     transform: scale(1.05);
 }
-.experience .serv-content .card i{
-    font-size: 50px;
-    color: crimson;
-    transition: color 0.3s ease;
-}
-.experience .serv-content .card:hover i{
-    color: #fff;
-}
-.experience .serv-content .card .text{
+.projects .carousel .card .text{
     font-size: 25px;
     font-weight: 500;
     margin: 10px 0 7px 0;
 }
-
+.projects .carousel .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid crimson;
+    transition: all 0.3s ease;
+}
+.projects .carousel .card:hover img{
+    border-color: #fff;
+}
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none!important;
+    border-radius: 50%;
+    border: 2px solid crimson!important;
+    transition: all 0.3s ease;
+}
+.owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+}
+.owl-dot.active,
+.owl-dot:hover{
+    background: crimson!important;
+}
 /* skills section styling */
 
 .skills .title::after{
