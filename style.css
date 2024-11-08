@@ -165,7 +165,7 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background: url("images/banner.gif") no-repeat center;
+    background: url("images/image1.png") no-repeat center;
     height: 100vh;
     color: #FF0000;
     min-height: 500px;
