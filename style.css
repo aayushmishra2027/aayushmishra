@@ -259,7 +259,7 @@ section .title::after{
 
 /* teams section styling */
 .experience .title::after{
-    content: "Experience";
+    content: "Our Experience";
 }
 .experience .carousel .card{
     background: #222;
@@ -322,7 +322,7 @@ section .title::after{
 /* skills section styling */
 
 .skills .title::after{
-    content: "Technical Skill Knowledge";
+    content: "Collaboration";
 }
 .skills .skills-content .column{
     width: calc(50% - 30px);
