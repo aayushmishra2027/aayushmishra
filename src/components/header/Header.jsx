@@ -10,7 +10,7 @@ const Header = () => {
     <header id="home">
       <div className="container header__container">
         <h5>Namaste, I'm</h5>
-        <h1>Aayush Anil Mishra and I'm a</h1>
+        <h1>Aayush Anil Mishra and I'm a </h1>
         <Typed
           className="text-light"
           strings={[
